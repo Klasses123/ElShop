@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="jumbotron">
+    <h1>ElStore</h1>
+    <p class="lead">Магазин электронных товаров</p>
+    <p><a class="btn btn-primary btn-lg" href="@Url.Action("Index", "Product")">Товары &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Компьютеры</h2>
+        <p>Самые быстрые и высокотехнологичные!</p>
+        <p><a class="btn btn-default" href="/Product/GPBCID/1">К компьютерам &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Телефоны</h2>
+        <p>Самые практичные, брендовые!</p>
+        <p><a class="btn btn-default" href="/Product/GPBCID/2">К смратфонам &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Роутеры</h2>
+        <p>Самые самые!</p>
+        <p><a class="btn btn-default" href="/Product/GPBCID/3">К роутерам &raquo;</a></p>
+    </div>
+</div>

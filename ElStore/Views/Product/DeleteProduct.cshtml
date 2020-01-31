@@ -1,0 +1,54 @@
+﻿@model ElStore.Models.Product
+
+@{
+    ViewBag.Title = "Удаление продукта";
+}
+
+<h3>Вы уверены, что хотите удалить этот товар из базы?</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.LabelFor(model => model.ProductName, "Наименование товара")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.ProductPrice, "Цена")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductPrice)
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.ProductDescription, "Описание")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductDescription)
+        </dd>
+
+        <dt>
+            @Html.LabelFor(model => model.CategoryId, "ID категории")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryId)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" />
+            @Html.ActionLink("Назад к списку товаров", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,25 @@
+﻿@model ElStore.ViewModels.ProductsViewModel
+
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var p in Model.Products.OrderBy(x => x.CategoryId))
+        {
+            <div class="col-md-4">
+                <h4 style="text-align:center">@p.ProductName</h4>
+                <a href="/Product/GetProduct/@p.ProductId">
+                    <img class="img-thumbnail col-md-12" src="@p.ProductImg" />
+                </a>
+                <h4 style="text-align:center">Цена: @p.ProductPrice</h4>
+                <a href="/Cart/AddToCart/@p.ProductId">
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Добавить в корзину" class="btn btn-default" />
+                        </div>
+                    </div>
+                </a>
+                <hr />
+                <hr />
+            </div>
+        }
+    </div>
+</div>

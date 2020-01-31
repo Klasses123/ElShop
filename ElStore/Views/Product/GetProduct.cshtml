@@ -1,0 +1,15 @@
+﻿@model ElStore.ViewModels.ProductViewModel
+
+<div align="center" class="row mt-5 mb-2 container center-block">
+    <h2 class="center-block">@Model.Product.ProductName</h2>
+    <img class="img-thumbnail center-block" src="@Model.Product.ProductImg" width="500" height="500" />
+    <h3>Цена: @Model.Product.ProductPrice рублей</h3>
+    <p>@Model.Product.ProductDescription</p>
+    <a href="/Cart/AddToCart/@Model.Product.ProductId">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Добавить в корзину" class="btn btn-default" />
+            </div>
+        </div>
+    </a>
+</div>

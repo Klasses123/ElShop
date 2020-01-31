@@ -1,0 +1,41 @@
+﻿@model ElStore.ViewModels.CartViewModel
+
+@if (Model.CartItems.Count() != 0)
+{
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var item in Model.CartItems)
+            {
+                <div class="col-md-4">
+                    <h4 style="text-align:center">@item.CartItemName</h4>
+                    <img class="img-thumbnail col-md-12" src="@item.CartItemImg" />
+                    <h4 style="text-align:center">Цена: @item.CartItemPrice</h4>
+                    <a href="/Cart/DeleteFromCart/@item.CartItemId">
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="убрать" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </a>
+                    <hr />
+                    <hr />
+                </div>
+            }
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="pull-right">
+            <h4>Общая цена: @Model.SummPrice()</h4>
+            <a href="/Purchase/Checkout">
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Оформить покупку" class="btn btn-warning" />
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+}else
+{
+    <h4 style="text-align:center">Ваша корзина пуста!</h4>
+}
